@@ -254,6 +254,29 @@ $value = \TraderInteractive\Filter\Strings::tranlsate('bar', ['foo' => 'translat
 assert($value === 'translated to foo');
 ```
 
+#### Json::parse
+
+Aliased in the filterer as `json-parse`, this filter will accept a string value and parse it into an array or another supported
+value (bool, int, float, or double). The second parameter can be set to `true` to allow null values through without an error. The
+third parameter sets the max recursion depth and defaults to 512.
+
+```php
+$value = \TraderInteractive\Filter\Json::parse('{"foo":["bar"]}');
+assert($value === ['foo' => ['bar']]);
+```
+
+#### Json::validate
+
+Aliased in the filterer as `json`, this filter will accept a string value, ensure that it is valid JSON, and return the original
+string. The second parameter can be set to `true` to allow null values through without an error. The third parameter sets the max
+recursion depth and defaults to 512.
+
+```php
+$input = '{"foo":["bar"]}';
+$result = \TraderInteractive\Filter\Json::validate($input);
+assert($result === $input);
+```
+
 #### Url::filter
 Aliased in the filterer as `url`, this filter verifies that the argument is a URL string according to
 [RFC2396](http://www.faqs.org/rfcs/rfc2396). The second parameter can be set to `true` to allow

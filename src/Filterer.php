@@ -30,6 +30,8 @@ final class Filterer implements FiltererInterface
         'float' => '\\TraderInteractive\\Filter\\Floats::filter',
         'in' => '\\TraderInteractive\\Filter\\Arrays::in',
         'int' => '\\TraderInteractive\\Filter\\Ints::filter',
+        'json' => '\\TraderInteractive\\Filter\\Json::validate',
+        'json-parse' => '\\TraderInteractive\\Filter\\Json::parse',
         'ofArray' => '\\TraderInteractive\\Filterer::ofArray',
         'ofArrays' => '\\TraderInteractive\\Filterer::ofArrays',
         'ofScalars' => '\\TraderInteractive\\Filterer::ofScalars',
